@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web component</title>
+</head>
+
+<body>
+    <my-button label="Click Me!!!"></my-button>
+
+    <script src="script/Button.js"></script>
+
+
+    <script>
+
+        let _custom = document.querySelector('my-button');
+
+        _custom.addEventListener('myEvent', value => {
+            alert(value.detail);
+        });
+
+        setTimeout(() => {
+            _custom.label = 'Join us';
+            setTimeout(() => {
+                _custom.label = 'Rendered';
+            }, 2000);
+
+        }, 2000);
+    </script>
+</body>
+
+</html>
