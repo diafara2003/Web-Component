@@ -6,13 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>web component</title>
+
+    <style>
+        .registros {
+            margin-top: 15px;
+        }
+
+        .registro {
+            padding: 5px;
+        }
+    </style>
+
 </head>
 
 <body>
     <my-button label="Click Me!!!"></my-button>
     <hr />
-    <input id="txt_job" type="text" />
-    <input type="button" onclick="agregar()" value="Agregar Tarea" />
+    <div class="registro">
+        <input id="txt_job" type="text" />
+        <input type="button" onclick="agregar()" value="Agregar Tarea" />
+    </div>
     <div class="registros" id="registro">
 
     </div>
@@ -44,9 +57,9 @@
 
         function agregar() {
             let _text = document.getElementById('txt_job').value;
-            
+
             if (_text == '') return;
-            
+
             let _to_do = document.createElement('to-do');
             _to_do.setAttribute('value', _text);
 
