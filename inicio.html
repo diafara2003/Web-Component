@@ -10,8 +10,16 @@
 
 <body>
     <my-button label="Click Me!!!"></my-button>
+    <hr />
+    <input id="txt_job" type="text" />
+    <input type="button" onclick="agregar()" value="Agregar Tarea" />
+    <div class="registros" id="registro">
+
+    </div>
+
 
     <script src="script/Button.js"></script>
+    <script src="script/ToDo.js"></script>
 
 
     <script>
@@ -29,6 +37,24 @@
             }, 2000);
 
         }, 2000);
+    </script>
+
+
+    <script>
+
+        function agregar() {
+            let _text = document.getElementById('txt_job').value;
+            
+            if (_text == '') return;
+            
+            let _to_do = document.createElement('to-do');
+            _to_do.setAttribute('value', _text);
+
+            document.getElementById('registro').appendChild(_to_do);
+
+            document.getElementById('txt_job').value = "";
+        }
+
     </script>
 </body>
 
